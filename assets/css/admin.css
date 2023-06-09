@@ -1,0 +1,34 @@
+.main-body {
+  margin-top: 50px; }
+
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: solid gray 2px; }
+  .header .border-left {
+    border-left: solid gray 2px; }
+  .header .border-right {
+    border-right: solid gray 2px; }
+  .header .heading {
+    background-color: #e7d0af;
+    height: 100%;
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold; }
+  .header .active {
+    background-color: #bd935c; }
+
+.home-body {
+  display: none;
+  margin-top: 50px; }
+
+.show {
+  display: block; }
+
+table i {
+  cursor: pointer; }

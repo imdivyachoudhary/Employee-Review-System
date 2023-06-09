@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/css/modal.css" />
+
+<form action="" method="post" onsubmit="submitForm(this,event)">
+  <input type="hidden" name="for_employee_id" value="for_employee_id" />
+  <div class="modal-header">
+    <h1 class="modal-title fs-5" id="exampleModalLabel">Assign Reviewers</h1>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <table class="display dataTable" id="assign-reviewers-table">
+      <thead>
+        <tr>
+          <th>Employee</th>
+          <th>Email-Id</th>
+          <th>Select</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="row-id">
+          <td>Name</td>
+          <td>Email</td>
+          <td>
+            <input
+                  class="form-check-input me-1"
+                  type="checkbox"
+                  value="id"
+                  id="user-id"
+                  name="reviewers"
+                />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+      Cancel
+    </button>
+    <button type="submit" class="btn btn-success">Assign</button>
+  </div>
+</form>
+
