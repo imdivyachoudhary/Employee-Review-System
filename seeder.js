@@ -10,7 +10,7 @@ User.findOne(
       return;
     }
     if (!user) {
-      User.create({ email: "admin@gmail.com", password:"admin12345", name:"Admin", role: "admin" }, function (error, user) {
+      User.create({ email: "admin@gmail.com", password:"admin12345", name:"Admin", role: "Admin" }, function (error, user) {
         if (error) {
           console.log(error);
           console.log("Admin could not be created");

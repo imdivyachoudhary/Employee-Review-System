@@ -2,13 +2,13 @@ const mongoose = require("mongoose");
 
 const reviewSchema = new mongoose.Schema(
   {
-    from_user: {
+    for_user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
-
-    for_user: {
+    
+    from_user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
@@ -17,8 +17,8 @@ const reviewSchema = new mongoose.Schema(
     reviewStatus: {
       type: String,
       required: true,
-      enum: ["pending", "submitted"],
-      default: "submitted"
+      enum: ["Pending", "Submitted"],
+      default: "Pending"
     },
 
     feedback: {

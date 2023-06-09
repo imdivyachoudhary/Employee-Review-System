@@ -47,19 +47,34 @@ passport.checkAuthentication = function (req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   }
+  if (req.xhr){
+    return res.status(400).json({
+      message: "Unauthorized Action",
+    });
+  }
   return res.redirect("/user/sign-in");
 };
 
 passport.checkAdminAuthentication = function (req, res, next) {
-  if (req.isAuthenticated() && req.user.role=="admin") {
+  if (req.isAuthenticated() && req.user.role=="Admin") {
     return next();
+  }
+  if (req.xhr){
+    return res.status(400).json({
+      message: "Unauthorized Action",
+    });
   }
   return res.redirect("/user/sign-in");
 };
 
 passport.checkEmployeeAuthentication = function (req, res, next) {
-  if (req.isAuthenticated() && req.user.role=="employee") {
+  if (req.isAuthenticated() && req.user.role=="Employee") {
     return next();
+  }
+  if (req.xhr){
+    return res.status(400).json({
+      message: "Unauthorized Action",
+    });
   }
   return res.redirect("/user/sign-in");
 };

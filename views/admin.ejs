@@ -6,20 +6,20 @@
 
 <div class="container main-body">
   <div class="header">
-    <div class="heading active" onclick="showBody(this,'pendingReviews')">
+    <div class="heading active" onclick="showBody(this,'allUsers')">All Users</div>
+    <div class="heading border-left border-right" onclick="showBody(this,'pendingReviews')">
       Pending Reviews
     </div>
     <div
-      class="heading border-left border-right"
+      class="heading"
       onclick="showBody(this,'submittedReviews')"
     >
       Submitted Reviews
     </div>
-    <div class="heading" onclick="showBody(this,'allUsers')">All Users</div>
   </div>
-  <div class="home-body show" id="pendingReviews"><%- include('pending-reviews') %></div>
+  <div class="home-body show" id="allUsers"><%- include('all-users') %></div>
+  <div class="home-body" id="pendingReviews"><%- include('pending-reviews') %></div>
   <div class="home-body" id="submittedReviews"><%- include('submitted-reviews') %></div>
-  <div class="home-body" id="allUsers"><%- include('all-users') %></div>
 </div>
 
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>

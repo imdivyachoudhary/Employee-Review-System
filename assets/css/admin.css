@@ -23,6 +23,14 @@
   .header .active {
     background-color: #bd935c; }
 
+.below-header {
+  width: 100%;
+  margin-bottom: 20px; }
+
+.below-header.heading {
+  font-weight: bold;
+  text-align: center; }
+
 .home-body {
   display: none;
   margin-top: 50px; }

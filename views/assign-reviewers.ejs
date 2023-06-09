@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/css/modal.css" />
 
-<form action="" method="post" onsubmit="submitForm(this,event)">
-  <input type="hidden" name="for_employee_id" value="for_employee_id" />
+<form action="/user/admin/assign-reviewers" method="post" onsubmit="assignReviewers(this,event)">
+  <input type="hidden" name="employee_id" value="<%= employee.id %>" />
   <div class="modal-header">
     <h1 class="modal-title fs-5" id="exampleModalLabel">Assign Reviewers</h1>
     <button
@@ -12,6 +12,9 @@
     ></button>
   </div>
   <div class="modal-body">
+    <div class="flex-center below-header heading">
+      <%= employee.name %><br><%= employee.email %>
+    </div>
     <table class="display dataTable" id="assign-reviewers-table">
       <thead>
         <tr>
@@ -21,19 +24,23 @@
         </tr>
       </thead>
       <tbody>
+        <% reviewers.forEach(reviewer => { %>
+
         <tr id="row-id">
-          <td>Name</td>
-          <td>Email</td>
+          <td><%= reviewer.name %></td>
+          <td><%= reviewer.email %></td>
           <td>
             <input
                   class="form-check-input me-1"
                   type="checkbox"
-                  value="id"
+                  value="<%= reviewer.id %>"
                   id="user-id"
-                  name="reviewers"
+                  name="reviewers[]"
                 />
           </td>
         </tr>
+
+        <% }) %>
       </tbody>
     </table>
   </div>
@@ -44,4 +51,6 @@
     <button type="submit" class="btn btn-success">Assign</button>
   </div>
 </form>
+
+<script src="/js/datatable.js"></script>
 

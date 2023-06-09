@@ -5,8 +5,8 @@ const reviewController = require("../controllers/reviewController");
 
 const passport = require("passport");
 
-router.get("/feedback-form", passport.checkAuthentication, reviewController.feedbackForm);
-router.get("/view-feedback", passport.checkAuthentication, reviewController.viewFeedback);
-router.get("/edit-feedback-form", passport.checkAuthentication, reviewController.editFeedbackForm);
+router.post("/feedback-form", passport.checkAuthentication, reviewController.feedbackForm);
+router.post("/view-feedback", passport.checkAuthentication, reviewController.viewFeedback);
+router.post("/update-feedback", passport.checkAuthentication, reviewController.updateFeedback);
 
 module.exports = router;

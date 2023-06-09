@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="/css/modal.css" />
 
-<form action="" method="post" onsubmit="submitForm(this,event)">
-  <input type="hidden" name="employee_id" value="employee_id" />
+<form action="/user/admin/update-user" method="post" onsubmit="updateUser(this,event)">
+  <input type="hidden" name="employee_id" value="<%= employee.id%>" />
   <div class="modal-header">
-    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Employee</h1>
+    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit User</h1>
     <button
       type="button"
       class="btn-close"
@@ -13,38 +13,42 @@
   </div>
   <div class="modal-body">
     <div class="form-item">
-      <label for="employee_name" class="form-label">Name</label>
+      <label for="name" class="form-label">Name</label>
 
       <input
         type="text"
         class="form-control"
-        id="employee_name"
-        name="employee_name"
-        value="Name"
-        placeholder="For Employee Name"
+        id="name"
+        name="name"
+        value="<%= employee.name %>"
+        placeholder="<%= employee.name %>"
         required
       />
     </div>
     <div class="form-item">
-      <label for="employee_email" class="form-label">Email-Id</label>
+      <label for="email" class="form-label">Email-Id</label>
 
       <input
         type="email"
         class="form-control"
-        id="employee_email"
-        name="employee_email"
-        value="abc@gmail.com"
-        placeholder="abc@gmail.com"
+        id="email"
+        name="email"
+        value="<%= employee.email %>"
+        placeholder="<%= employee.email %>"
         required
       />
     </div>
 
     <div class="form-item">
-      <label for="employee_role" class="form-label">Role</label>
+      <label for="role" class="form-label">Role</label>
 
-      <select class="form-control" name="employee_role" id="employee_role">
-        <option value="admin">Admin</option>
-        <option value="employee" selected>Employee</option>
+      <select class="form-control" name="role" id="role" required>
+        <option value="Admin" <% if (employee.role=="Admin") { %>
+         selected
+        <% } %>>Admin</option>
+        <option value="Employee" <% if (employee.role=="Employee") { %>
+          selected
+         <% } %>>Employee</option>
       </select>
     </div>
   </div>

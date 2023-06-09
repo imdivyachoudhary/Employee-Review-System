@@ -8,8 +8,14 @@ const passport = require("passport");
 router.get("/",(req,res)=>{return res.redirect("/user/admin/home")});
 
 router.get("/home", passport.checkAdminAuthentication, adminController.home);
-router.get("/edit-user-form", passport.checkAdminAuthentication, adminController.editUserForm);
-router.get("/assign-reviewers-form", passport.checkAdminAuthentication, adminController.assignReviewersForm);
-router.get("/view-reviewers", passport.checkAdminAuthentication, adminController.viewReviewers);
+router.get("/add-user-form", passport.checkAdminAuthentication, adminController.addUserForm);
+router.post("/create-user", passport.checkAdminAuthentication, adminController.createUser);
+router.post("/edit-user-form", passport.checkAdminAuthentication, adminController.editUserForm);
+router.post("/update-user", passport.checkAdminAuthentication, adminController.updateUser);
+router.post("/delete-user", passport.checkAdminAuthentication, adminController.deleteUser);
+router.post("/assign-reviewers-form", passport.checkAdminAuthentication, adminController.assignReviewersForm);
+router.post("/assign-reviewers", passport.checkAdminAuthentication, adminController.assignReviewers);
+router.get("/view-reviewers/:user_id", passport.checkAdminAuthentication, adminController.viewReviewers);
+router.post("/edit-feedback-form", passport.checkAdminAuthentication, adminController.editFeedbackForm);
 
 module.exports = router;

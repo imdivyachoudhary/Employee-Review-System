@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/css/modal.css" />
 
-<form action="" method="post" onsubmit="submitForm(this,event)">
+<form action="/review/update-feedback" method="post" onsubmit="updateFeedback(this,event)">
+  <input type="hidden" name="review_id" value="<%= review.id %>">
   <div class="modal-header">
     <h1 class="modal-title fs-5" id="exampleModalLabel">Submit Feedback</h1>
     <button
@@ -12,25 +13,23 @@
   </div>
   <div class="modal-body">
     <div class="form-item">
-      <label for="for_employee" class="form-label">For Employee</label>
-      <input type="hidden" name="for_employee_id" value="for_employee_id" />
+      <label for="for_user" class="form-label">For Employee</label>
+      <input type="hidden" name="for_user" value="<%= review.for_user.id %>" />
       <input
         type="text"
         class="form-control"
-        id="for_employee_name"
-        name="for_employee_name"
-        value="Name"
-        placeholder="For Employee Name"
+        id="for_user_name"
+        name="for_user_name"
+        value="<%= review.for_user.name %>"
         readonly
         required
       />
       <input
         type="email"
         class="form-control"
-        id="for_employee_email"
-        name="for_employee_email"
-        value="abc@gmail.com"
-        placeholder="abc@gmail.com"
+        id="for_user_email"
+        name="for_user_email"
+        value="<%= review.for_user.email %>"
         readonly
         required
       />

@@ -29,6 +29,15 @@
     background-color: rgb(189, 147, 92);
   }
 }
+.below-header {
+  width: 100%;
+  // text-align: end;
+  margin-bottom: 20px;
+}
+.below-header.heading{
+  font-weight: bold;
+  text-align: center;
+}
 
 .home-body {
     display: none;
