@@ -195,14 +195,14 @@ function createNewUserRow(employee){
                       style="color: #02a0e3"
                       data-bs-toggle="modal"
                       data-bs-target="#modal"
-                      onclick="assignReviewersForm(this,'${employee.id}')"
+                      onclick="assignReviewersForm(this,'${employee._id}')"
                     ></i>
                   </td>
                   <td>
                     <i
                       class="fas fa-eye"
                       style="color: #038705"
-                      onclick="goToPage(this,'/user/admin/view-reviewers/${employee.id}')"
+                      onclick="goToPage(this,'/user/admin/view-reviewers/${employee._id}')"
                     ></i>
                   </td>
                 </tr>`;
