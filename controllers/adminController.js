@@ -105,7 +105,7 @@ module.exports.updateUser = async (req, res) => {
 module.exports.deleteUser = async (req, res) => {
   try {
     await User.findByIdAndDelete(req.body.employee_id);
-    await Review.updateMany({
+    await Review.deleteMany({
       $or: [
         { from_user: req.body.employee_id },
         { for_user: req.body.employee_id },
