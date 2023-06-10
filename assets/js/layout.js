@@ -68,11 +68,11 @@ function updateFeedback(ele, event) {
       $(".modal").modal("hide");
       showNotification("success", response.message);
       let employee = response.data.employee;
-      if (response.data.reviewStatus == "Submitted") {
+      if (response.data.previousStatus == "Pending" && response.data.reviewStatus == "Submitted") {
         $(`#pending-reviews-table tbody #row-${employee.id}`).remove();
         let dom = submittedReviewRow(employee);
         $(`#submitted-reviews-table tbody`).prepend(dom);
-      } else {
+      } else if(response.data.previousStatus == "Submitted" && response.data.reviewStatus == "Pending"){
         $(`#submitted-reviews-table tbody #row-${employee.id}`).remove();
         let dom = pendingReviewRow(employee);
         $(`#pending-reviews-table tbody`).prepend(dom);

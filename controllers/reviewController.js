@@ -41,13 +41,14 @@ module.exports.updateFeedback = async (req, res) => {
   try {
     let reviewStatus = "Submitted";
     if (!req.body.feedback) reviewStatus = "Pending";
-    await Review.findByIdAndUpdate(req.body.review_id, {
+    let review = await Review.findByIdAndUpdate(req.body.review_id, {
       feedback: req.body.feedback,
       reviewStatus: reviewStatus,
     });
 
     return res.status(200).json({
       data: {
+        previousStatus: review.reviewStatus,
         reviewStatus: reviewStatus,
         employee: {
           id: req.body.for_user,
