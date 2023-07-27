@@ -2,20 +2,20 @@
 An application that allows employees to submit feedback toward each other’s performance. <br />
 
 - Sign In:- <br />
-    -Sign in Using email id and password; <br />
-    -For Admin:- <br />
-        email_id- admin@gmail.com <br />
-        password- admin12345 <br />
+    - Sign in Using email id and password; <br />
+    - For Admin:- <br />
+        - email_id- admin@gmail.com <br />
+        - password- admin12345 <br />
 
 -Sign Up:- <br />
-    -Sign up Using email id <br />
-    -A new sign-up user is an employee, only admins can make other employee admin <br />
+    - Sign up Using email id <br />
+    - A new sign-up user is an employee, only admins can make other employee admin <br />
 
 - Admin view:- <br />
-    -Add/remove/update/view employees <br />
-    -Add/update/view performance reviews <br />
-    -Assign employees to participate in another employee's performance review <br />
-    -Admin can make an employee an admin <br />
+    - Add/remove/update/view employees <br />
+    - Add/update/view performance reviews <br />
+    - Assign employees to participate in another employee's performance review <br />
+    - Admin can make an employee an admin <br />
 
 - Employee view:- <br />
     - List of performance review requiring feedback <br />
