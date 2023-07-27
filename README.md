@@ -1,25 +1,27 @@
 # Employee-Review-System
-An application that allows employees to submit feedback toward each other’s performance. <br />
 
-- Sign In:- <br />
-    - Sign in Using email id and password; <br />
-    - For Admin:- <br />
-        - email_id- admin@gmail.com <br />
-        - password- admin12345 <br />
+An application that allows employees to submit feedback toward each other’s performance.
 
-- Sign Up:- <br />
-    - Sign up Using email id <br />
-    - A new sign-up user is an employee, only admins can make other employee admin <br />
+- Sign In:-
+    - Sign in Using email id and password
+    - For Admin:-
+        - email_id- admin@gmail.com
+        - password- admin12345
+
+- Sign Up:-
+    - Sign up Using email id
+    - New sign-up user is an employee
 
 - Admin view:- <br />
-    - Add/remove/update/view employees <br />
-    - Add/update/view performance reviews <br />
-    - Assign employees to participate in another employee's performance review <br />
-    - Admin can make an employee an admin <br />
+    - Add/remove/update/view employees
+    - Edit Roles (Employee or Admin)
+    - Add/update/view performance reviews
+    - Assign employees to participate in another employee's performance review
+    - Admin can make an employee an admin
 
-- Employee view:- <br />
-    - List of performance review requiring feedback <br />
-    - Submit feedback <br />
+- Employee view:-
+    - List of performance review requiring feedback
+    - Submit feedback
 
 ---
 ## Requirements
